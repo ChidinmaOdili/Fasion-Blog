@@ -1,6 +1,7 @@
 package com.nma.fashionblog.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,6 +31,7 @@ public class Comment {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    //@JsonIgnore
     @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "post_id" , referencedColumnName = "id")
